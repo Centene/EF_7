@@ -1,0 +1,32 @@
+﻿@model EF_7.Models.CabFrasGlobal
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@ViewBag.Serie
+@using (Html.BeginForm())
+{
+
+
+    
+        <div class="editor-field">
+            
+            <p>
+            @Html.DropDownList("IDPACIENTE", new SelectList(Model.PacientesGlob, "IDPACIENTE", "NOMBRE_Y_APELLIDOS"), "-- seleccione --", new { @class = "listviewmodel" })
+            </p>
+           
+            <p>
+            @Html.LabelFor(model=>model.TOTAL)    @Html.EditorFor(model => model.TOTAL)
+            </p>
+
+
+
+
+
+            <input type="submit" value="Manda" />
+        </div>
+
+    
+}
