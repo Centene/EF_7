@@ -4,19 +4,21 @@
     ViewBag.Title = "Index";
 }
 <head>
-    
 
-    
+
+
     <script type="text/javascript " src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript">
-    $(function() {
+        $(function () {
 
 
-        $("#cmbbox").val("");
-        $("#text1").val(0);
+            $("#cmbbox").val("");
+            //$("#text1").val(0);
+            $(":text").each(function(){
+                $($(this)).val('');
+                });
 
-
-    });
+        });
     </script>
 
 </head>
@@ -35,19 +37,20 @@
         </p>
 
         <p>
-            @Html.LabelFor(model => model.TOTAL)    @Html.EditorFor(model => model.TOTAL, null,"text1" )
+            @Html.LabelFor(model => model.TOTAL)    @Html.EditorFor(model => model.TOTAL)
+            
         </p>
-
+        @*@Html.EditorFor(model => model.TOTAL, null, "text1")*@
 
 
 
 
         <input type="submit" value="Manda" />
     </div>
-    
 
-        <p>
-            <input id="boton01" type="button" value="button" />
 
-        </p>
-}
+    <p>
+        <input id="boton01" type="button" value="button" />
+
+    </p>
+                }
